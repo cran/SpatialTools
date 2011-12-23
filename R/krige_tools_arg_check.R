@@ -65,10 +65,47 @@ krige_arg_check <- function(y, V, Vp, Vop, X, Xp, coeff)
 	}
 }
 
+krige_sk_arg_check <- function(y, V, Vp, Vop, m)
+{
+	n <- length(y)
 
-
-
-
+	if(!is.numeric(y))
+	{
+		stop("y must be a numeric vector")
+	}
+	if(!is.matrix(V) || !is.numeric(V) || (nrow(V)!= ncol(V)))
+	{
+		stop("V must be a square numeric matrix")
+	}
+	if(length(y) != nrow(V))
+	{
+		stop("length(y) must equal nrow(V)")
+	}
+	if(!is.matrix(Vp) || !is.numeric(Vp) || (nrow(Vp)!= ncol(Vp)))
+	{
+		stop("Vp must be a square numeric matrix")
+	}
+	if(!is.matrix(Vop) || !is.numeric(Vop))
+	{
+		stop("Vop must be a numeric matrix")
+	}
+	if(length(y) != nrow(Vop))
+	{
+		stop("length(y) must equal nrow(Vop)")
+	}
+	if(ncol(Vp) != ncol(Vop))
+	{
+		stop("ncol(Vp) must equal ncol(Vop)")
+	}
+	if(!is.numeric(m))
+	{
+		stop("m must be a numeric vector")
+	}
+	if(length(m)!=1)
+	{
+		stop("m must have length 1")
+	}
+}
 
 pweights_uk_arg_check <- function(X, V, Xp, Vp, Vop)
 {
