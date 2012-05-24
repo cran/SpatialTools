@@ -272,9 +272,14 @@ maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential",
 	smoothness = 0.5, t.type = "ar1", t.par = .5, D = NULL, T = NULL, 
 	reml = TRUE, lower = NULL, upper = NULL, control = list(TRACE = TRUE), optimizer="nlminb")
 {
+	y <- as.vector(y)
+	maxlik_cov_st_check_arg(X = X, y = y, coords = coords, time = time, 
+		sp.type = sp.type, range.par = range.par, error.ratio = error.ratio, 
+		smoothness = smoothness, t.type = t.type, 
+		D = D, T = T, reml = reml, lower = lower, upper = upper)
+
 	if(is.null(D)){ D <- dist1(coords) }
 	if(is.null(T)){ T <- dist1(matrix(time)) }
-
 
 	#construct vector of initial parameters to pass to objective function
 	parms <- c(range.par, error.ratio)
@@ -315,13 +320,13 @@ maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential",
 	
 	V <- V.sp * V.time + diag(nrow(V.sp)) * error.ratio
 
+	n <- length(y)
 	ViX <- solve(V, X)
 	XtViX <- crossprod(ViX, X)
 	fitted <- X %*% solve(XtViX, crossprod(ViX, y))
 	r <- y - fitted
-	df.resid <- nrow(y) - ncol(X)
+	df.resid <- n - ncol(X)
 	rtVir <- crossprod(r, solve(V,r))
-	n <- length(y)
 
 	if(!reml)
 	{
@@ -369,7 +374,7 @@ logLik.cov.st <- function(par, X, y, D, T, sp.type, t.type, reml = FALSE, minus2
 	XtViX <- crossprod(ViX, X)
 	fitted <- X %*% solve(XtViX, crossprod(ViX, y))
 	r <- y - fitted
-	n <- nrow(y)
+	n <- length(y)
 	df.resid <- n - ncol(X)
 	rtVir <- crossprod(r, solve(V,r))
 
