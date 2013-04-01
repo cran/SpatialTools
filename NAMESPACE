@@ -13,6 +13,7 @@ export(maxlik.cov.st)
 
 #export(condnorm.par)
 export(rmvnorm)
+export(rcondnorm)
 #export(rcondsim)
 
 export(krige.uk)
@@ -20,6 +21,8 @@ export(pweights.uk)
 export(mspe.uk)
 export(krige.ok)
 export(krige.sk)
+export(get.contours)
+export(plot.contourLines)
 
 #export(rmvnorm2)
 #export(condnorm.par2)
