@@ -1,5 +1,9 @@
 #Changes
 
+#0.5.3  Modified spLMPredictJoint function to rely on C++ for much faster computation.
+
+#0.5.2  Corrected bug in cov.sp when user-supplied distance matrices are supplied.  Added spLMPredictJoint function.
+
 #0.5.1 Modified simple.cov.sp for much faster computation times of spherical and 
        matern covariance functions.  Added matern2 covariance function, an alternative 	parameterization from Handcock and Wallis (1994).
 
