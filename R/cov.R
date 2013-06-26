@@ -29,7 +29,7 @@ cov.sp <- function(coords, sp.type = "exponential",
 		}
 		else
 		{
-			Vp <- simple.cov.sp(D, sp.type, sp.par, error.var = 0, smoothness, finescale.var) 
+			Vp <- simple.cov.sp(Dp, sp.type, sp.par, error.var = 0, smoothness, finescale.var) 
 		}
 		if(is.null(Dop))
 		{
