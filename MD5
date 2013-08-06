@@ -1,6 +1,6 @@
-c4df63fb0ce45c81bcc294ca8d1957ca *DESCRIPTION
-2a72b446987efc7a3378ffd9ffba790c *NAMESPACE
-322636036c671b4037c0836a220f1ad2 *NEWS
+0e4c4f6506884ac0c937ca74772ebbd3 *DESCRIPTION
+9c28ecd196bb0a33cdce7b1355556b11 *NAMESPACE
+41dabe9215a47c0ccbee58170e9784b6 *NEWS
 38ae092bc8971af4cf69592acb54e440 *R/arg_check.R
 53b3b1357b15a00b76d3984215d3afbd *R/bayesian.R
 f90335b35e2810204b88d002c622e74e *R/contour_tools.R
@@ -9,7 +9,7 @@ b94fb8044f925616f5cae0cc4b68d46b *R/dist_funcs.R
 fe98be146102498726d78bfbae8002e9 *R/generate_norm.R
 a3806b9836ee6d68e63bfb433065f190 *R/krige_tools.R
 974658602a78a25eb78be315ed37d431 *R/old_code.R
-338a7bd448a74829acd517a0e23dd995 *R/preamble.R
+c4ef51c10e5ae455d9915941c7c8d196 *R/preamble.R
 1cb87e1a537c3cad9f78c955cda86cc3 *data/toydata.RData
 2fd544881e6ae4ee5a632fbc33cf25c6 *man/coincident.Rd
 2fdf8e56e8b2b2faeea746aa2302cd68 *man/cov.sp.Rd
@@ -30,7 +30,7 @@ c6f41cec33fc4fbb0a82ce7dd92c6869 *man/rcondnorm.Rd
 1de830dca6fa68c0656b4bb0c08ca0a0 *man/rmvnorm.Rd
 6b97ce62c92cbaca46cea0966597f7cd *man/simple.cov.sp.Rd
 074f0453b8c497d7c9f1bc2446a24d53 *man/simple.cov.time.Rd
-d1121d89d7395ff4183c3151ca49361e *man/spLMPredictJoint.Rd
+b6afd6f704d5d4ad587274a8c923efaf *man/spLMPredictJoint.Rd
 34c1ec684511f89f5c70955aabff4e1b *man/toydata.Rd
 489b262d4f81136a32f0bb09936fe53e *src/Makevars
 a73031cbe7d6aaf0bd22e20f6526977d *src/Makevars.win
