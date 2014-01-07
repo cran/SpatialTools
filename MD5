@@ -1,6 +1,6 @@
-0e4c4f6506884ac0c937ca74772ebbd3 *DESCRIPTION
+69e53452c1e632b709961bff1c1d8b55 *DESCRIPTION
 9c28ecd196bb0a33cdce7b1355556b11 *NAMESPACE
-41dabe9215a47c0ccbee58170e9784b6 *NEWS
+337f3e4b9b814ea7e6f9f861972b589b *NEWS
 38ae092bc8971af4cf69592acb54e440 *R/arg_check.R
 53b3b1357b15a00b76d3984215d3afbd *R/bayesian.R
 f90335b35e2810204b88d002c622e74e *R/contour_tools.R
@@ -42,7 +42,7 @@ dcceda45cd78a601a034efcf87ccc656 *src/cov_tools.h
 7dbe6adafb1def0749c3c3beae72ff95 *src/dist2.c
 274642a8e43b76b0d538e35da63eeb43 *src/generate_norm.cpp
 170843c898c7cdb07a2f7573e08d8c57 *src/generate_norm.h
-da4738caa5de67abd9de95550e91113b *src/krige.cpp
+3e5b715eeff52e6f629e4a1c4fc60896 *src/krige.cpp
 8a0381be7c130f8d3138679f2ede51a9 *src/krige.h
 75169a08f01c3030810ee27da8ac5f84 *src/utils.cpp
 0862488810baaade9af1ce1daaa05756 *src/utils.h
