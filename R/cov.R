@@ -199,7 +199,7 @@ maxlik.cov.sp <- function(X, y, coords, sp.type = "exponential",
 
 	if(optimizer=="nlminb")
 	{
-		min.out <- nlminb(start=parms, 
+		min.out <- stats::nlminb(start=parms, 
 			objective = logLik.cov.sp, X=X, y=y, D=D,
 			sp.type = sp.type, reml=reml, minus2 = TRUE, lower=lower, upper=upper, 
 			control = list(trace = TRUE))
@@ -314,7 +314,7 @@ maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential",
 
 	if(optimizer=="nlminb")
 	{
-		min.out <- nlminb(start=parms, 
+		min.out <- stats::nlminb(start=parms, 
 			objective = logLik.cov.st, X=X, y=y, D=D,
 			sp.type = sp.type, t.type = t.type, T=T, 
 			reml=reml, minus2 = TRUE, 
