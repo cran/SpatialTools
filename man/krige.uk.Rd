@@ -38,7 +38,7 @@
 } 
 
 \value{
-The function a list containing the following objects:
+The function returns a list containing the following objects:
 	\item{pred}{A vector of length \eqn{np} containing the predicted
 		responses.}
 	\item{mspe}{A vector of length \eqn{np} containing the 
@@ -49,6 +49,8 @@ The function a list containing the following objects:
 	\item{vcov.coeff}{A \eqn{k \times k} matrix containing the
 	(estimated) covariance matrix of estimated the regression coefficients.} 
 	\item{sim}{An \eqn{n \times nsim} matrix containing the \code{nsim} realizations of the conditional realizations.  Each column of the matrix represents a realization of the conditional normal distribution.}
+	
+If \code{nsim} > 0, this list has class "krigeConditionalSample".	
 }
 
 \details{

@@ -48,6 +48,7 @@ krige.uk <- function(y, V, Vp, Vop, X, Xp, nsim = 0, Ve.diag = NULL, method = "e
 		sim <- newsim[-(1:n),] + crossprod(w, newZ)
 
 		out$sim <- sim
+		class(out) <- "krigeConditionalSample"
 	}
 	return(out)
 }
@@ -66,6 +67,7 @@ krige.ok <- function(y, V, Vp, Vop, nsim = 0, Ve.diag = NULL, method = "eigen")
 	out$pred <- as.vector(out$pred)	
 	out$mspe <- as.vector(out$mspe)
 	out$coeff <- as.vector(out$coeff)
+	if(nsim > 0) 		class(out) <- "krigeConditionalSample"
 	return(out)
 }
 
@@ -81,5 +83,6 @@ krige.sk <- function(y, V, Vp, Vop, m = 0, nsim = 0, Ve.diag = NULL, method = "e
 	#convert one-dimensional matrices to vectors
 	out$pred <- as.vector(out$pred)	
 	out$mspe <- as.vector(out$mspe)
+	if(nsim > 0) 		class(out) <- "krigeConditionalSample"
 	return(out)
 }

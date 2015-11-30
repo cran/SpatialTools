@@ -31,13 +31,13 @@
 	\item{Vop}{The cross-covariance between the observed responses 
 		and the responses to be predicted.  The size is 
 		\eqn{n \times np}} 
-		\item{nsim}{The number of simulated data sets to sample from the conditional predictive distribution.}
-	\item{Ve.diag}{A vector of length \eqn{n} specifying the measure error variances of the observed data.}
+	\item{nsim}{The number of simulated data sets to sample from the conditional predictive distribution.}
+	\item{Ve.diag}{A vector of length \eqn{n} specifying the measure error variances of the observed data.  Only needed if \code{nsim} > 0.}
 	\item{method}{The method for decomposing \code{V} in conditional simulation.  Default is "eigen", for the Eigen decomposition.  Alternatives are "chol" (Cholesky) and "svd" (Singular Value Decomposition).}
 }
 
 \value{
-The function a list containing the following objects:
+The function returns a list containing the following objects:
 	\item{pred}{A vector of length \eqn{np} containing the predicted
 		responses.}
 	\item{mspe}{A vector of length \eqn{np} containing the 
@@ -48,6 +48,7 @@ The function a list containing the following objects:
 	\item{vcov.coeff}{A \eqn{k \times k} matrix containing the
 	(estimated) covariance matrix of estimated the regression coefficients.} 
 	\item{simulations}{An \eqn{n \times nsim} matrix containing the \code{nsim} realizations of the conditional realizations.  Each column of the matrix represents a realization of the conditional normal distribution.}
+If \code{nsim} > 0, this list has class "krigeConditionalSample".
 }
 
 \details{
