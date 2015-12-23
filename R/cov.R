@@ -202,7 +202,7 @@ maxlik.cov.sp <- function(X, y, coords, sp.type = "exponential",
 		min.out <- stats::nlminb(start=parms, 
 			objective = logLik.cov.sp, X=X, y=y, D=D,
 			sp.type = sp.type, reml=reml, minus2 = TRUE, lower=lower, upper=upper, 
-			control = list(trace = TRUE))
+			control = control)
 			
 		range.par <- min.out$par[1]
 		error.ratio <- min.out$par[2]
@@ -221,10 +221,10 @@ maxlik.cov.sp <- function(X, y, coords, sp.type = "exponential",
 	rtVir <- crossprod(r, solve(V,r))
 	if(!reml)
 	{
-		sigmasq <- as.vector(rtVir/n)
+		sigmasq <- c(rtVir/n)
 	}else
 	{
-		sigmasq <- as.vector(rtVir/df.resid)
+		sigmasq <- c(rtVir/df.resid)
 	}
 	
 	error.var <- sigmasq * error.ratio
@@ -264,24 +264,24 @@ logLik.cov.sp <- function(par, X, y, D, sp.type, reml = FALSE, minus2 = FALSE)
 
 	if(!reml)
 	{
-		sigmasq <- as.vector(rtVir/n)
+		sigmasq <- c(rtVir/n)
 	
 		lik <- determinant(V, logarithm=TRUE)$modulus + 
-		rtVir/sigmasq + length(r) * log(2*pi) + length(r)*log(sigmasq)
+		n + length(r) * log(2*pi) + length(r)*log(sigmasq)
 	}else
 	{
-		sigmasq <- as.vector(rtVir/df.resid)
+		sigmasq <- c(rtVir/df.resid)
 	
 		lik <- determinant(V, logarithm=TRUE)$modulus + 
-		determinant(XtViX/sigmasq, logarithm=TRUE)$modulus +
-		rtVir/sigmasq + df.resid * log(2*pi) + length(r)*log(sigmasq)
+		determinant(XtViX, logarithm=TRUE)$modulus +
+		(n - ncol(X)) + n * log(2*pi) + (n - ncol(X))*log(sigmasq)
 	}
 	if(!minus2)
 	{
 		lik <- -lik/2
 	}
 
-	return(lik[1,1])
+	return(lik)
 }
 
 maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential", 
@@ -318,8 +318,7 @@ maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential",
 			objective = logLik.cov.st, X=X, y=y, D=D,
 			sp.type = sp.type, t.type = t.type, T=T, 
 			reml=reml, minus2 = TRUE, 
-			lower=lower, upper=upper)#, 
-#			control = list(trace = TRUE))
+			lower=lower, upper=upper, control = control)
 			
 		range.par <- min.out$par[1]
 		error.ratio <- min.out$par[2]
@@ -400,24 +399,24 @@ logLik.cov.st <- function(par, X, y, D, T, sp.type, t.type, reml = FALSE, minus2
 
 	if(!reml)
 	{
-		sigmasq <- as.vector(rtVir/n)
+		sigmasq <- c(rtVir/n)
 	
 		lik <- determinant(V, logarithm=TRUE)$modulus + 
-		rtVir/sigmasq + length(r) * log(2*pi) + length(r)*log(sigmasq)
+		  n + length(r) * log(2*pi) + length(r)*log(sigmasq)
 	}else
 	{
-		sigmasq <- as.vector(rtVir/df.resid)
+		sigmasq <- c(rtVir/df.resid)
 	
 		lik <- determinant(V, logarithm=TRUE)$modulus + 
-		determinant(XtViX/sigmasq, logarithm=TRUE)$modulus +
-		rtVir/sigmasq + df.resid * log(2*pi) + length(r)*log(sigmasq)
+		  determinant(XtViX, logarithm=TRUE)$modulus +
+		  (n - ncol(X)) + n * log(2*pi) + (n - ncol(X))*log(sigmasq)
 	}
 	if(!minus2)
 	{
 		lik <- -lik/2
 	}
 
-	return(lik[1,1])
+	return(lik)
 }
 
 bounds.cov.sp <- function(sp.type)
