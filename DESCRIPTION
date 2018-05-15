@@ -1,8 +1,7 @@
 Package: SpatialTools
 Type: Package
 Title: Tools for Spatial Data Analysis
-Version: 1.0.2
-Date: 2015-12-22
+Version: 1.0.4
 Author: Joshua French <joshua.french@ucdenver.edu>
 Maintainer: Joshua French <joshua.french@ucdenver.edu>
 Depends: R (>= 3.0.2)
@@ -12,6 +11,6 @@ Description: Tools for spatial data analysis.  Emphasis on kriging.  Provides fu
 License: GPL (>= 2)
 LazyLoad: yes
 NeedsCompilation: yes
-Packaged: 2015-12-22 22:06:28 UTC; jfrench
+Packaged: 2018-05-14 21:23:22 UTC; joshu
 Repository: CRAN
-Date/Publication: 2015-12-23 06:53:02
+Date/Publication: 2018-05-15 03:59:19 UTC

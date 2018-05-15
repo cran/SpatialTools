@@ -179,7 +179,7 @@ maxlik.cov.sp <- function(X, y, coords, sp.type = "exponential",
 	range.par = stop("specify range.par argument"), 
 	error.ratio = stop("specify error.ratio argument"), smoothness = 0.5,  
 	D = NULL, reml = TRUE, lower = NULL, upper = NULL, 
-	control = list(TRACE = TRUE), optimizer="nlminb")
+	control = list(trace = TRUE), optimizer="nlminb")
 {
 
 	y <- as.vector(y)
@@ -288,7 +288,7 @@ maxlik.cov.st <- function(X, y, coords, time, sp.type = "exponential",
 	range.par = stop("specify range.par argument"), 
 	error.ratio = stop("specify error.ratio argument"), 
 	smoothness = 0.5, t.type = "ar1", t.par = .5, D = NULL, T = NULL, 
-	reml = TRUE, lower = NULL, upper = NULL, control = list(TRACE = TRUE), optimizer="nlminb")
+	reml = TRUE, lower = NULL, upper = NULL, control = list(trace = TRUE), optimizer="nlminb")
 {
 	y <- as.vector(y)
 	maxlik_cov_st_check_arg(X = X, y = y, coords = coords, time = time, 
